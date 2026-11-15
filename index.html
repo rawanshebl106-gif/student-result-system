@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> نظام اداره نتائج الطلاب</title>
+
+      <!-- Bootstrap CSS -->
+      <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css"
+      rel="stylesheet"
+  >
+  <!-- ملف CSS الخاص بنا -->
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    
+<div class="container py-5">
+
+    <!-- عنوان الموقع -->
+    <div class="text-center mb-4">
+        <h1 class="fw-bold">نظام إدارة نتائج الطلاب</h1>
+        <p class="text-muted">إضافة الطلاب وتحليل النتائج الأكاديمية</p>
+    </div>
+
+     <!-- نموذج إدخال بيانات الطالب -->
+     <div class="card shadow-sm mb-4">
+
+        <div class="card-header bg-primary text-white">
+            <h4 class="mb-0">إضافة طالب جديد</h4>
+        </div>
+
+        <div class="card-body">
+
+            <div class="mb-3">
+                <label for="studentName" class="form-label">
+                    اسم الطالب
+                </label>
+
+                <input
+                    type="text"
+                    id="studentName"
+                    class="form-control"
+                    placeholder="أدخل اسم الطالب"
+                >
+            </div>
+
+
+            <div class="row">
+
+                <div class="col-md-4 mb-3">
+                    <label for="grade1" class="form-label">
+                        درجة المادة الأولى
+                    </label>
+
+                    <input
+                        type="number"
+                        id="grade1"
+                        class="form-control"
+                        placeholder="من 0 إلى 100"
+                        min="0"
+                        max="100"
+                    >
+                </div>
+
+
+                <div class="col-md-4 mb-3">
+                    <label for="grade2" class="form-label">
+                        درجة المادة الثانية
+                    </label>
+
+                    <input
+                        type="number"
+                        id="grade2"
+                        class="form-control"
+                        placeholder="من 0 إلى 100"
+                        min="0"
+                        max="100"
+                    >
+                </div>
+
+
+                <div class="col-md-4 mb-3">
+                    <label for="grade3" class="form-label">
+                        درجة المادة الثالثة
+                    </label>
+
+                    <input
+                        type="number"
+                        id="grade3"
+                        class="form-control"
+                        placeholder="من 0 إلى 100"
+                        min="0"
+                        max="100"
+                    >
+                </div>
+
+            </div>
+
+
+            <div class="mb-3">
+                <label for="attendance" class="form-label">
+                    نسبة الحضور %
+                </label>
+
+                <input
+                    type="number"
+                    id="attendance"
+                    class="form-control"
+                    placeholder="من 0 إلى 100"
+                    min="0"
+                    max="100"
+                >
+            </div>
+
+
+            <!-- صندوق رسائل الخطأ -->
+            <div
+                id="errorBox"
+                class="alert alert-danger d-none"
+                role="alert"
+            ></div>
+
+
+            <!-- زر إضافة الطالب -->
+            <button
+                id="addStudentBtn"
+                class="btn btn-primary w-100 mb-3"
+                type="button"
+            >
+                إضافة طالب
+            </button>
+
+
+            <!-- زر لجنة الرأفة -->
+            <button
+                id="mercyBtn"
+                class="btn btn-success w-100"
+                type="button"
+            >
+                تفعيل لجنة الرأفة
+            </button>
+
+        </div>
+    </div>
+
+
+    <!-- قائمة الطلاب -->
+    <div class="card shadow-sm mb-4">
+
+        <div class="card-header bg-dark text-white">
+            <h4 class="mb-0">الطلاب الذين تم إضافتهم</h4>
+        </div>
+
+        <div class="card-body">
+
+            <div id="studentsList">
+                <p class="text-muted text-center mb-0">
+                    لم يتم إضافة أي طالب حتى الآن.
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- التقرير النهائي -->
+    <div class="card shadow-sm">
+
+        <div class="card-header bg-success text-white">
+            <h4 class="mb-0">التقرير النهائي للجنة الرأفة</h4>
+        </div>
+
+        <div class="card-body">
+
+            <div id="mercyReport">
+                <p class="text-muted text-center mb-0">
+                    اضغط على زر تفعيل لجنة الرأفة لعرض التقرير.
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+
+</div>
+
+
+
+
+<!-- ملف javaScript -->
+<script src="main.js"></script>
+
+
+</body>
+</html>
